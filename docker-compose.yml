@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  mongoDbUser:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:${DATABASE_PORT}
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DATABASE_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DATABASE_PWD}
+      MONGO_INITDB_DATABASE: ${DATABASE_NAME}
+    volumes:
+      - ./mongodb:/data/db
+
+volumes:
+  mongodb:
