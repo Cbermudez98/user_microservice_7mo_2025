@@ -1,6 +1,8 @@
 import { compareSync, genSaltSync, hashSync } from "bcrypt";
 import { IHashService } from "../../domain/services/IHash.service";
+import { injectable } from "inversify";
 
+@injectable()
 export class HashService implements IHashService {
   private readonly salt = genSaltSync(10);
 

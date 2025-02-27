@@ -10,6 +10,7 @@ import {
   NotFoundError,
   UnprocessableEntityError,
 } from "../../../domain/errors";
+import { ForbidenException } from "../../../domain/errors/ForbiddenException";
 
 @injectable()
 export class HandlerResponse implements IHandlerResponse {
@@ -24,6 +25,7 @@ export class HandlerResponse implements IHandlerResponse {
         InternalServerError,
         UnprocessableEntityError,
         FoundExceptionError,
+        ForbidenException,
       ];
 
       const err = errors.find((e) => error instanceof e);

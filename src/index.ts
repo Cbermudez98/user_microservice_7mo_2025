@@ -13,6 +13,7 @@ const database = container.get<IDatabase>(TYPES.DATABASE);
 const app = container.get<IExpress>(TYPES.EXPRESS_FRAMEWORK);
 
 const userRoute = container.get<IRouter>(TYPES.USER_ROUTER);
+const authRoute = container.get<IRouter>(TYPES.AUTH_ROUTE);
 
 // IIFE
 (async () => {
@@ -20,6 +21,7 @@ const userRoute = container.get<IRouter>(TYPES.USER_ROUTER);
   await database.init(url, ENVIRONMENTS.DATABASE_NAME);
 
   app.setRoute("/user", userRoute.init());
+  app.setRoute("/auth", authRoute.init());
 
   app.init(Number(ENVIRONMENTS.PORT));
 })();

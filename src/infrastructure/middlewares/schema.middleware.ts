@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import Joi from "joi";
-import { ISchemaValidatorMiddleware } from "../interfaces/ISchema.middleware";
+import { ISchemaValidatorMiddleware } from "../interfaces/middlewares/ISchema.middleware";
 import { injectable } from "inversify";
 import { IMiddlewareType } from "../express/middleware.type";
 

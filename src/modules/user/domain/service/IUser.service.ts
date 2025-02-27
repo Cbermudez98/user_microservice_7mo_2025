@@ -5,4 +5,5 @@ export interface IUserService {
   update(id: IUser["_id"], user: IUserUpdate): Promise<boolean>;
   delete(id: IUser["_id"]): Promise<boolean>;
   get(id: IUser["_id"]): Promise<IUser>;
+  getByEmail(email: IUser["email"]): Promise<IUser>;
 }

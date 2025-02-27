@@ -6,6 +6,12 @@ export namespace CONSTANTS {
   export enum DATABASE_MODELS {
     USER = "user",
   }
+
+  export enum ROLES {
+    ADMIN = "admin",
+    USER = "user",
+    SECRETARY = "secretary"
+  }
 }
 
 export const ENVIRONMENTS = {

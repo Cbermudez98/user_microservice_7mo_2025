@@ -53,6 +53,16 @@ export class UserService implements IUserService {
     }
   }
 
+  async getByEmail(email: IUser["email"]): Promise<IUser> {
+    try {
+      const user = await UserModel.findOne({ email });
+      if (!user) throw new Error();
+      return user.toJSON() as any;
+    } catch (error) {
+      throw new NotFoundError("User not found");
+    }
+  }
+
   private async getUserByKey(
     key: string,
     value: string

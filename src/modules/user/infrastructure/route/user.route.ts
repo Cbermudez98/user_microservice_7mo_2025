@@ -5,7 +5,7 @@ import { IUseCase } from "../../../../domain/useCase/useCase";
 import { userSchema } from "../schemas/user.schema.joi";
 import { IRouter } from "../../../../infrastructure/express/IRouter";
 import { inject, injectable } from "inversify";
-import { ISchemaValidatorMiddleware } from "../../../../infrastructure/interfaces/ISchema.middleware";
+import { ISchemaValidatorMiddleware } from "../../../../infrastructure/interfaces/middlewares/ISchema.middleware";
 import { IHandlerResponse } from "../../../../infrastructure/interfaces/IHandler.response";
 
 @injectable()
